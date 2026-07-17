@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#05050A"> <!-- گہرا ڈارک بیک گراؤنڈ -->
+
+    <!-- Top Neon Connection Bar -->
+    <LinearLayout
+        android:id="@+id/connection_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#11111A"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/ip_input"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="PC IP Address"
+            android:textColorHint="#448888"
+            android:textColor="#00FFFF"
+            android:backgroundTint="#00FFFF"
+            android:inputType="textUri" />
+
+        <Button
+            android:id="@+id/btn_connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="#AA00FF"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:text="Connect" />
+
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Disconnected"
+            android:textColor="#FF0055"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:shadowColor="#FF0055"
+            android:shadowDx="0" android:shadowDy="0" android:shadowRadius="8"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <!-- Left Side: Joystick Placeholder -->
+    <FrameLayout
+        android:id="@+id/joystick_container"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginStart="48dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Neon Joystick"
+            android:textColor="#00FFFF"
+            android:textStyle="bold"
+            android:shadowColor="#00FFFF"
+            android:shadowDx="0" android:shadowDy="0" android:shadowRadius="10"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <!-- Right Side: 6 Neon Buttons -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button android:id="@+id/btn_jump" android:layout_width="80dp" android:layout_height="80dp" android:text="Jump" android:textColor="#00FFFF" android:backgroundTint="#1A1A24" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" />
+        <Button android:id="@+id/btn_attack" android:layout_width="80dp" android:layout_height="80dp" android:text="Attack" android:textColor="#FF0055" android:backgroundTint="#1A1A24" android:layout_marginEnd="16dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@id/btn_jump" />
+        <Button android:id="@+id/btn_dash" android:layout_width="80dp" android:layout_height="80dp" android:text="Dash" android:textColor="#00FFFF" android:backgroundTint="#1A1A24" android:layout_marginBottom="16dp" app:layout_constraintBottom_toTopOf="@id/btn_jump" app:layout_constraintEnd_toEndOf="parent" />
+        <Button android:id="@+id/btn_spell" android:layout_width="80dp" android:layout_height="80dp" android:text="Spell" android:textColor="#AA00FF" android:backgroundTint="#1A1A24" android:layout_marginBottom="16dp" android:layout_marginEnd="16dp" app:layout_constraintBottom_toTopOf="@id/btn_attack" app:layout_constraintEnd_toStartOf="@id/btn_dash" />
+        <Button android:id="@+id/btn_heal" android:layout_width="80dp" android:layout_height="80dp" android:text="Heal" android:textColor="#00FFCC" android:backgroundTint="#1A1A24" android:layout_marginBottom="16dp" app:layout_constraintBottom_toTopOf="@id/btn_dash" app:layout_constraintEnd_toEndOf="parent" />
+        <Button android:id="@+id/btn_menu" android:layout_width="80dp" android:layout_height="80dp" android:text="Menu" android:textColor="#FFFFFF" android:backgroundTint="#1A1A24" android:layout_marginBottom="16dp" android:layout_marginEnd="16dp" app:layout_constraintBottom_toTopOf="@id/btn_spell" app:layout_constraintEnd_toStartOf="@id/btn_heal" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
